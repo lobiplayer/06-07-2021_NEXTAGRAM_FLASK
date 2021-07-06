@@ -1,0 +1,18 @@
+{% extends "_layout.html" %}
+
+{% block title %}
+{% endblock %}
+
+
+{% block content %}
+<h1>Users#Profile</h1>
+
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+{% for message in messages %}
+{{ message }}
+{% endfor %}
+{% endif %}
+{% endwith %}
+
+{% endblock %}
