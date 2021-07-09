@@ -1,0 +1,23 @@
+{% extends "_layout.html" %}
+
+{% block title %}
+{% endblock %}
+
+
+{% block content %}
+<h1>Sessions#Logout</h1>
+
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+{% for message in messages %}
+{{ message }}
+{% endfor %}
+{% endif %}
+{% endwith %}
+
+<form action="{{url_for('sessions.logout')}}" , method='POST'>
+    <input type="hidden" name='csrf_token' value='{{ csrf_token() }}'>
+    <button type="submit" class="btn btn-danger mb-2" name='button'>Log out</button>
+</form>
+
+{% endblock %}

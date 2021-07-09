@@ -2,6 +2,7 @@
 
 {% block title %}
   Homepage
+
 {% endblock %}
 
 {% block header %}
@@ -9,4 +10,8 @@
 
 {% block content %}
   <h1>Homepage</h1>
-{% endblock %}
+  {% if current_user.is_authenticated %}
+    <h2>Hello, welcome {{current_user.username}}, {{current_user.email}}</h2>
+  {% endif%}
+
+  {% endblock %}

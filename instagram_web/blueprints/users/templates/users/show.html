@@ -5,7 +5,8 @@
 
 
 {% block content %}
-<h1>Users#Profile</h1>
+
+<h1>profile page</h1>
 
 {% with messages = get_flashed_messages() %}
 {% if messages %}
@@ -14,5 +15,13 @@
 {% endfor %}
 {% endif %}
 {% endwith %}
+
+{% if current_user.id == user.id%}
+
+<a href="{{url_for('users.edit', id = current_user.id)}}" >edit profile</a>
+
+<img src='{{user.profile_image_path}}' width='150' />
+
+{%endif%}
 
 {% endblock %}
