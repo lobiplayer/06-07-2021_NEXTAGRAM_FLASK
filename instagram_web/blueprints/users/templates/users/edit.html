@@ -58,18 +58,24 @@
     </div>
 </div>
 
-<h1>Upload Your Files Bro</h1>
+<div class="container">
+    <div class="row justify-content-center align-items-center">
+        <div class="col-md-4">
+            <form action="{{url_for('users.upload', id = user.id)}}" method="POST" enctype="multipart/form-data">
 
-<form action="{{url_for('users.upload', id = user.id)}}" method="POST" enctype="multipart/form-data">
-    <input type="hidden" name='csrf_token' value='{{ csrf_token() }}'>
+                <input type="hidden" name='csrf_token' value='{{ csrf_token() }}'>
 
-    <label for="user_file">Upload Your File</label>
-    <br></br>
-    <input type="file" name="user_file">
-    <br></br>
-    <button type="submit">Upload</button>
-
-</form>
+                <div class="form-group">
+                    <label for="user_file">Upload Your File</label>
+                    <input type="file" class="form-control-file"  name="user_file">
+                    <small id="passwordhelp" class="form-text text-muted">Here you must specify which files can be uploaded. have to check if this is arrange with client side and server side authentication </small>
+                </div>
+                
+                <button type="submit" class="btn btn-primary mb-2">Upload</button>
+            </form>
+        </div>
+    </div>
+</div>
 
 {% with messages = get_flashed_messages() %}
 {% if messages %}

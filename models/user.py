@@ -18,23 +18,23 @@ class User(BaseModel, UserMixin):
 
 
     
-    def validate(self):
-        email_existing = User.get_or_none(User.email == self.email)
-        if email_existing:
-            self.errors.append('Username already exists!')
+    # def validate(self):
+    #     email_existing = User.get_or_none(User.email == self.email)
+    #     if email_existing:
+    #         self.errors.append('Email already exists!')
         
-        existing_username = User.get_or_none(User.username == self.username)
-        if existing_username:
-            self.errors.append('Username already exists!')
+    #     existing_username = User.get_or_none(User.username == self.username)
+    #     if existing_username:
+    #         self.errors.append('Username already exists!')
 
-        if len(self.password) <= 6:
-            self.errors.append('Password should be longer that 6 characters')
+    #     if len(self.password) <= 6:
+    #         self.errors.append('Password should be longer that 6 characters')
         
-        has_lowercase = re.search(r"[a-z]", self.password)
-        has_uppercase = re.search(r"[A-Z]", self.password)
-        has_special_char = re.search(r"[\[ \] \{ \} \# \% \$ \* \@]", self.password)
+    #     has_lowercase = re.search(r"[a-z]", self.password)
+    #     has_uppercase = re.search(r"[A-Z]", self.password)
+    #     has_special_char = re.search(r"[\[ \] \{ \} \# \% \$ \* \@]", self.password)
 
-        if has_lowercase and has_uppercase and has_special_char:
-            self.password_hash = generate_password_hash(self.password)
-        else:
-            self.errors.append('Password either does not have a lowercase, uppercasem or a specials character')
+    #     if has_lowercase and has_uppercase and has_special_char:
+    #         self.password_hash = generate_password_hash(self.password)
+    #     else:
+    #         self.errors.append('Password either does not have a lowercase, uppercase or a specials character')
