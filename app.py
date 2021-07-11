@@ -5,6 +5,7 @@ from flask import Flask, render_template
 from models.base_model import db
 from models.user import User
 from flask_login import LoginManager
+from flask_modals import Modal
 
 
 web_dir = os.path.join(os.path.dirname(
@@ -12,6 +13,7 @@ web_dir = os.path.join(os.path.dirname(
 
 app = Flask('NEXTAGRAM', root_path=web_dir)
 
+modal = Modal(app)
 csrf = CSRFProtect(app)
 login_manager = LoginManager()
 login_manager.init_app(app)

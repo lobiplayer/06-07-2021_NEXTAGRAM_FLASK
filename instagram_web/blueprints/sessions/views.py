@@ -2,6 +2,7 @@ from flask import Blueprint, render_template, request, flash, redirect, url_for,
 from models.user import User
 from werkzeug.security import check_password_hash
 from flask_login import login_user, logout_user
+from flask_modals import render_template_modal
 
 sessions_blueprint = Blueprint('sessions',
                             __name__,
@@ -24,8 +25,8 @@ def login():
     user = User.get_or_none(User.username == username)
     
     if not user: #check if user the username exists in the database. If not, the users will be directed to the login page
-        flash('Wrong login credentials')
-        return redirect(url_for('sessions.new'))
+        flash('No such user found')
+        return render_template_modal('sessions/new.html', modal='loginmodal')
     else:
         hashed_password = user.password
 
@@ -39,7 +40,7 @@ def login():
         return redirect(url_for('users.show', username = user.username))
     else:
         flash('Wrong login credentials')
-        return redirect(url_for('sessions.new'))
+        return render_template_modal('sessions/new.html', modal='loginmodal')
 
 @sessions_blueprint.route('/logout', methods=['POST'])
 def logout():

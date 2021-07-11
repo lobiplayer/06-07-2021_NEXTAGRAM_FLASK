@@ -1,8 +1,11 @@
 appdirs==1.4.4
 autopep8==1.4.3
+beautifulsoup4==4.9.3
 boto3==1.17.107
 botocore==1.20.107
+braintree==4.10.0
 certifi==2018.11.29
+chardet==4.0.0
 Click==7.0
 colorama==0.4.1
 cssmin==0.2.0
@@ -11,7 +14,9 @@ Flask==1.0.2
 Flask-Assets==0.12
 Flask-Cors==3.0.7
 Flask-Login==0.5.0
+Flask-Modals==0.3.1
 Flask-WTF==0.15.1
+idna==2.10
 itsdangerous==1.1.0
 Jinja2==2.10
 jmespath==0.10.0
@@ -24,8 +29,10 @@ psycopg2-binary==2.9.1
 pycodestyle==2.5.0
 python-dateutil==2.8.1
 python-dotenv==0.10.1
+requests==2.25.1
 s3transfer==0.4.2
 six==1.12.0
+soupsieve==2.2.1
 urllib3==1.26.6
 virtualenv==20.2.2
 virtualenv-clone==0.5.4

@@ -1,0 +1,37 @@
+{% extends "_layout.html"%}
+
+{% block content %}
+
+<h1> upload images</h1>
+
+<div class="container">
+    <div class="row justify-content-center align-items-center">
+        <div class="col-md-4">
+            <form action="{{url_for('images.create')}}" method="POST" enctype="multipart/form-data">
+
+                <input type="hidden" name='csrf_token' value='{{ csrf_token() }}'>
+
+                <div class="form-group">
+                    <label for="user_file">Upload Your File</label>
+                    <input type="file" class="form-control-file" name="user_file">
+                    <small id="passwordhelp" class="form-text text-muted">Here you must specify which files can be
+                        uploaded. have to check if this is arrange with client side and server side authentication
+                    </small>
+
+                <div class="form-group">
+                    <label for="caption">Caption</label>
+                    <input type="text" class="form-control" id="caption" name='caption' placeholder="Place here some caption text for your photo." />
+                </div>
+
+                <div class="form-group">
+                    <label for="hashtags">Hashtags</label>
+                    <input type="text" class="form-control" id="hashtags" name='hashtags' placeholder="#nextafamous" />
+                </div>
+
+                <button type="submit" class="btn btn-primary mb-2">Upload</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock%}

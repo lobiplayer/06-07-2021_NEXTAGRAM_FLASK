@@ -119,7 +119,6 @@ def upload(id):
             file.filename = secure_filename(file.filename)
             image_path   	  = upload_file_to_s3(file, app.config["S3_BUCKET"])
 
-            print('ATTENTION!!!!!', image_path)
 
             print(user.username, user.id, user.email, user.profile_image_path)
             user.profile_image_path = image_path

@@ -24,4 +24,10 @@
 
 {%endif%}
 
+<div class='container'>
+    {% for image in user.images %}
+        <img src="{{image.image_url}}" width='300' />
+    {% endfor %}
+</div>
+
 {% endblock %}
