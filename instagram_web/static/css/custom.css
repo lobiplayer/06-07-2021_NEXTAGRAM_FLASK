@@ -5,6 +5,10 @@ body {
   padding-bottom: 15px;
   position: relative;
   min-height: 100vh;
+  background: #01F86C;
+background: -webkit-linear-gradient(top left, #01F86C, #20AFE9);
+background: -moz-linear-gradient(top left, #01F86C, #20AFE9);
+background: linear-gradient(to bottom right, #01F86C, #20AFE9);
 }
 
 footer {
@@ -22,6 +26,12 @@ footer a {
   color: #303030;
 }
 
+.userimageprofilepage {
+  vertical-align: middle;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
 /*
 *
 * ===========================================================
@@ -30,7 +40,7 @@ footer a {
 *
 */
 .hero {
-  padding: 6.25rem 0px !important;
+  padding: 1.25rem 0px !important;
   margin: 0px !important;
 }
 .cardbox {

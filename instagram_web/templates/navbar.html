@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light" id='navbar'>
     <div class="container-fluid">
         <a class="navbar-brand" href="#">Navbar</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -23,13 +23,20 @@
                     <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
                 </li>
 
-                {% if current_user.is_authenticated %}
-                    {% include 'logoutbutton.html' %}
-                {% else %}
-                    {% include 'loginmodal.html' %}
-                {% endif%}
-                
             </ul>
+            
+        </div>
+        <div class="float-right">
+            <div class="inline-block"></div>
+            {% if current_user.is_authenticated %}
+            {% include 'logoutbutton.html' %}
+            </div>
+            <div class="inline-block">
+            {% include 'uploadpicturemodal.html' %}
+            </div>
+            {% else %}
+            {% include 'loginmodal.html' %}
+            {% endif%}
         </div>
     </div>
 </nav>

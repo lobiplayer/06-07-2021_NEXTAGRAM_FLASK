@@ -1,12 +1,10 @@
-{% extends "_layout.html"%}
 
-{% block content %}
 
-<h1> upload images</h1>
+<h1> upload image</h1>
 
 <div class="container">
     <div class="row justify-content-center align-items-center">
-        <div class="col-md-4">
+        <div>
             <form action="{{url_for('images.create')}}" method="POST" enctype="multipart/form-data">
 
                 <input type="hidden" name='csrf_token' value='{{ csrf_token() }}'>
@@ -33,5 +31,3 @@
         </div>
     </div>
 </div>
-
-{% endblock%}
